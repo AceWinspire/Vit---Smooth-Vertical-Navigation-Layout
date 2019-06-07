@@ -1,0 +1,58 @@
+nav {
+  position: absolute;
+  z-index: 2;
+  overflow: auto;
+  top: 0px;
+  left: -280px;
+  width: 320px;
+  padding: 20px 0px;
+  height: 100%;
+  background-color: white;
+  color: black;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+nav .logo {
+  top: 5px;
+  right: 10px;
+  padding: 5px;
+  float: right;
+  z-index: 2;
+  position: relative;
+}
+nav .menuicon {
+  position: relative;
+  z-index: 5;
+  top: 50%;
+  right: -20px;
+  cursor: pointer;
+  transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91), opacity 500ms, box-shadow 250ms, background-color 500ms;
+  float: right;
+}
+nav .menuicon > div {
+  width: 35px;
+  height: 2px;
+  margin-bottom: 8px;
+  background-color: black;
+}
+nav .menuicon.active > div {
+  background-color: black;
+}
+nav .menuicon.active #top {
+  transform: translateY(0px) rotate(-135deg);
+}
+nav .menuicon.active #bottom {
+  transform: translateY(-10px) rotate(-45deg);
+}
+#page-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=../css/vit.css.map */

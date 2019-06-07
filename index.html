@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/vit.css" />
   </head>
 
   <body>
@@ -48,8 +49,11 @@
         </ul>
       </div>
     </nav>
+
     <div id="page-content">
-      <header>HEADRER</header>
+      <header>
+        <div class="nav-top">NAV TOP</div>
+      </header>
       <section>Section</section>
     </div>
 
@@ -65,23 +69,11 @@
           '<script src="js/vendor/jquery-3.3.1.min.js"><\/script>'
         );
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-      window.ga = function() {
-        ga.q.push(arguments);
-      };
-      ga.q = [];
-      ga.l = +new Date();
-      ga("create", "UA-XXXXX-Y", "auto");
-      ga("send", "pageview");
-    </script>
-    <script
-      src="https://www.google-analytics.com/analytics.js"
-      async
-      defer
-    ></script>
+    
   </body>
 </html>
