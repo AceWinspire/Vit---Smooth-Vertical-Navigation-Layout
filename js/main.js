@@ -2,9 +2,14 @@
 $(function (side_Nav_Animation) {
 
     var navAnim = new TimelineMax({ paused: true })
-    navAnim.to("nav", 0.55, { x: 280, backgroundColor: "rgba(255, 255, 255, 1)", ease: SteppedEase.config(6) });
-    var burgAnim = new TimelineMax({ paused: true })
-    burgAnim.to("#top", 0.55, { x: 280, backgroundColor: "rgba(255, 255, 255, 1)", ease: SteppedEase.config(6) });
+    navAnim.to("nav", 0.6, { x: 480, backgroundColor: "rgba(255, 255, 255, 1)", ease: SteppedEase.config(6) });
+    
+   
+    var topAnim =  TweenMax.to("#top", 1.2, {paused:true, rotation:45, ease: Elastic.easeInOut.config(1.2, 2)});
+    var bottomAnim =  TweenMax.to("#bottom", 1.2, {paused:true, y:-10, rotation:-45,  ease: Elastic.easeInOut.config(1.2, 2)});
+    //var bottomAnim = new TimelineMax({ paused: true })
+    //bottomAnim.to("#bottom", 0.55, {y:-10, rotation: -45, ease: SteppedEase.config(6) });
+
     
     
     
@@ -21,6 +26,8 @@ $(function (side_Nav_Animation) {
             sidebarBox.classList.remove('active');
         } else {
             navAnim.play();
+            topAnim.play();
+            bottomAnim.play();
             this.classList.add('active');
             sidebarBox.classList.add('active');
         }
@@ -30,6 +37,9 @@ $(function (side_Nav_Animation) {
     
         if (sidebarBox.classList.contains('active')) {
             navAnim.reverse();
+            topAnim.reverse();
+            bottomAnim.reverse();
+            
             sidebarBtn.classList.remove('active');
             sidebarBox.classList.remove('active');
         }
@@ -44,9 +54,3 @@ $(function (side_Nav_Animation) {
     });
 });
 
-//$(function (slide_Animation) {
-//    TweenMax.to(".main-img", 10, {x:-20, y:-20,opacity:1, scaleX:1.25, scaleY:1.25,  transformOrigin:"center", ease:Power1.easeIn});
-//    TweenMax.to(".cloud", 8, {x:50, y:-250,opacity:0.125, scaleX:0.75, scaleY:0.75,  transformOrigin:"center", ease:Power1.easeIn});
-//    TweenMax.to(".bg-image", 12, {autoplay:true, opacity:0, ease:Power1.easeIn});
-
-//});

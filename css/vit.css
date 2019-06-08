@@ -10,16 +10,24 @@ BASE
   min-height: 100vh;
 }
 
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+}
+
 /************************
 SIDEBAR
 ************************/
 nav {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   overflow: auto;
   top: 0px;
-  left: -280px;
-  width: 320px;
+  bottom: 0;
+  left: -480px;
+  width: 520px;
   padding: 20px 0px;
   height: 100%;
   background-color: white;
@@ -56,10 +64,10 @@ nav .menuicon.active > div {
   background-color: black;
 }
 nav .menuicon.active #top {
-  transform: translateY(0px) rotate(-135deg);
+  /*transform: translateY(0px) rotate(-135deg);*/
 }
 nav .menuicon.active #bottom {
-  transform: translateY(-10px) rotate(-45deg);
+  /*transform: translateY(-10px) rotate(-45deg);*/
 }
 nav .menu-content.active ul li {
   transition: all 250ms;
@@ -111,6 +119,7 @@ header .slide-main {
 }
 header .slide-main .header-title {
   position: absolute;
+  width: 100%;
   top: 25%;
   left: 0;
   z-index: 2;
