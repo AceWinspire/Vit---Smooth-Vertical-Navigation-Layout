@@ -3,8 +3,10 @@ $(function (side_Nav_Animation) {
 
 
 });
-var tl = new TimelineMax({ paused: true })
-tl.to("nav", 0.35, { x: 280, backgroundColor: "rgba(255, 255, 255, 1)", ease: SteppedEase.config(6) });
+var navAnim = new TimelineMax({ paused: true })
+navAnim.to("nav", 0.55, { x: 280, backgroundColor: "rgba(255, 255, 255, 1)", ease: SteppedEase.config(6) });
+var burgAnim = new TimelineMax({ paused: true })
+burgAnim.to("#top", 0.55, { x: 280, backgroundColor: "rgba(255, 255, 255, 1)", ease: SteppedEase.config(6) });
 
 
 
@@ -20,7 +22,7 @@ sidebarBtn.addEventListener('mouseenter', function (event) {
         this.classList.remove('active');
         sidebarBox.classList.remove('active');
     } else {
-        tl.play();
+        navAnim.play();
         this.classList.add('active');
         sidebarBox.classList.add('active');
     }
@@ -29,7 +31,7 @@ sidebarBtn.addEventListener('mouseenter', function (event) {
 sidebarBtn.addEventListener('mouseleave', function (event) {
 
     if (sidebarBox.classList.contains('active')) {
-        tl.reverse();
+        navAnim.reverse();
         sidebarBtn.classList.remove('active');
         sidebarBox.classList.remove('active');
     }

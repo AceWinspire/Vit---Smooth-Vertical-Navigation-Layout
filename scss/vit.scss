@@ -1,4 +1,4 @@
-$black: rgb(0, 0, 0,);
+$black: rgb(0, 0, 0);
 $white: rgb(255, 255, 255);
 
 @mixin transition() {
@@ -8,6 +8,20 @@ $white: rgb(255, 255, 255);
   transition: all 0.35s ease-in-out;
 }
 
+/************************
+BASE
+************************/
+#page-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+/************************
+SIDEBAR
+************************/
 nav {
   position: absolute;
   z-index: 2;
@@ -20,58 +34,84 @@ nav {
   background-color: $white;
   color: $black;
   @include transition;
+
   .logo {
-    top:5px;
-    right:10px;
+    top: 5px;
+    right: 10px;
     padding: 5px;
-    float:right;
-    z-index:2;
-    position:relative;
+    float: right;
+    z-index: 2;
+    position: relative;
   }
   .menuicon {
     position: relative;
     z-index: 5;
     top: 50%;
-    right:-20px;
+    right: -20px;
     cursor: pointer;
-    
-    transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91), opacity 500ms, box-shadow 250ms, background-color 500ms;
-    float:right;
-    & > div{
-        width: 35px;
-        height: 2px;
-        margin-bottom: 8px;
+    transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91),
+    opacity 500ms, box-shadow 250ms, background-color 500ms;
+    float: right;
+    & > div {
+      width: 35px;
+      height: 2px;
+      margin-bottom: 8px;
+      background-color: $black;
+    }
+
+    &.active {
+      & > div {
         background-color: $black;
-        
-    }
-    
-    &.active{
-        & > div {
-            background-color: $black;
-        }
-       
-        &  #top{
-            transform: translateY(0px) rotate(-135deg);
-        }
-        &  #bottom{
-            transform: translateY(-10px) rotate(-45deg);
-        }
+      }
 
+      & #top {
+        transform: translateY(0px) rotate(-135deg);
+      }
+      & #bottom {
+        transform: translateY(-10px) rotate(-45deg);
+      }
     }
-
   }
   .menu-content {
-  }
-}
-#page-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  header {
-    .nav-top {
+    &.active ul li {
+      transition: all 250ms;
+      -webkit-animation: exit normal forwards ease-out; /* Safari 4+ */
+      -moz-animation: exit 0.35s normal forwards ease-out; /* Fx 5+ */
+      -o-animation: exit 0.35s normal forwards ease-out; /* Opera 12+ */
+      animation: exit 0.35s normal forwards ease-out;
     }
+    .active ul li {
+      transition: all 250ms;
+      -webkit-animation: entry normal forwards ease-in-out; /* Safari 4+ */
+      -moz-animation: entry 0.35s normal forwards ease-in-out; /* Fx 5+ */
+      -o-animation: entry 0.35s normal forwards ease-in-out; /* Opera 12+ */
+      animation: entry 0.35s normal forwards ease-in-out;
+    }
+    
   }
 }
+
+/************************
+HEADER
+************************/
+header {
+  .nav-top {
+    width: 100%;
+    background: grey;
+  }
+  .slide-main {
+  }
+}
+
+/************************
+ANIMATION
+*************************/
+@-webkit-keyframes entry {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
