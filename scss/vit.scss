@@ -8,13 +8,12 @@ $white: rgb(255, 255, 255);
   transition: all 0.35s ease-in-out;
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,700,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,400,700,900&display=swap");
 /************************
 BASE
 ************************/
-body{
-  font-family: 'Poppins', sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
 }
 #page-content {
   position: absolute;
@@ -24,39 +23,37 @@ body{
   height: 100%;
   min-height: 100vh;
 }
-.container{
-  width:100%;
+.container {
+  width: 100%;
   max-width: 1240px;
-  margin:0 auto;
+  margin: 0 auto;
   position: relative;
 }
 /************************
 SIDEBAR
 ************************/
-.logo{
+.logo {
   top: 5px;
-    left: 10px;
-    padding: 0px;
-    margin:0;
-    
-    
-    z-index: 11;
-    position: fixed;
-    a{
-      color:$black;
-      font-size:2em;
-      font-weight:600;
-      text-decoration: none;
-    }
+  left: 1rem;
+  padding: 0px;
+  margin: 0;
 
+  z-index: 11;
+  position: fixed;
+  a {
+    color: $black;
+    font-size: 2em;
+    font-weight: 600;
+    text-decoration: none;
+  }
 }
 nav {
   position: fixed;
   z-index: 10;
   overflow: auto;
   top: 0px;
-  bottom:0;
-  left: -480px;
+  bottom: 0;
+  left: -460px;
   width: 520px;
   padding: 20px 0px;
   height: 100%;
@@ -71,15 +68,15 @@ nav {
     position: relative;
     z-index: 5;
     top: 50%;
-    right: -20px;
+    right: 0.95rem;
     cursor: pointer;
     transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91),
-    opacity 500ms, box-shadow 250ms, background-color 500ms;
+      opacity 500ms, box-shadow 250ms, background-color 500ms;
     float: right;
     & > div {
-      width: 35px;
-      height: 2px;
-      margin-bottom: 8px;
+      width: 2.25rem;
+      height: 4px;
+      margin-bottom: 16px;
       background-color: $black;
     }
 
@@ -106,49 +103,73 @@ nav {
     -webkit-align-items: stretch;
     align-items: stretch;
     display: flex;
-    .main{
-    
-     width:50%;
-  
-  min-height: 40vh;
-  li a{
-    font-size: 2rem;
-    
-  }
-    }
-    .submenu{
-      width:50%;
-      font-size: 0.75rem;
+    margin-top: 2rem;
+    .main {
+      width: 50%;
 
-     
+      min-height: 45vh;
+      ul{-webkit-align-self: stretch;
+        align-self: stretch;
+        vertical-align:top ;
+      li a {
+        font-size: 2rem;
+        line-height: 2rem;
+        line-height: 4rem;
+      }}
     }
-    ul{
+    .submenu {
+      width: 50%;
+      font-size: 0.75rem;
+    }
+    ul {
       list-style: none;
       -webkit-flex: 1 1 auto;
-     
+
       flex: 1 1 auto;
       -webkit-align-self: stretch;
       align-self: stretch;
       vertical-align: middle;
-     
-      
-      li{
-        width:100%;
+
+      li {
+        width: 100%;
         padding: 5px 0px;
-        a{
+        a {
           font-size: 0.75rem;
           text-decoration: none;
           color: $black;
         }
       }
-    }
-    h4{
-      font-size: 0.75rem;
-      color: rgba($black, 0.25);
-    }
-      
+      &.menu-title {
+        color: rgba($black, 0.25);
+        -webkit-align-items: flex-start;
+  align-items: flex-start;
+ 
 
-    
+        &__dark {
+          color: $black;
+          h4 {
+            padding: 0;
+            padding: 0;
+            margin: 0;
+            line-height: 1.25;
+          }
+          li a {
+            color: rgba($black, 0.25);
+          }
+        }
+      }
+    }
+    h4 {
+      font-size: 0.75rem;
+      font-weight: 400;
+      margin: 0;
+      &.topmenu{
+        min-height: 4rem;
+        font-size: 0.75rem;
+        vertical-align: top;
+        
+      }
+    }
 
     &.active ul li {
       transition: all 250ms;
@@ -164,7 +185,6 @@ nav {
       -o-animation: entry 0.35s normal forwards ease-in-out; /* Opera 12+ */
       animation: entry 0.35s normal forwards ease-in-out;
     }
-    
   }
 }
 
@@ -172,65 +192,53 @@ nav {
 HEADER
 ************************/
 header {
-  position:relative;
+  position: relative;
   width: 100%;
-  height:100%;
+  height: 100%;
   min-height: 85vh;
   .nav-top {
-   z-index: 2;
-   position: absolute;
-   top:0;
-   left:0;
-   width:100%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: grey;
   }
   .slide-main {
     width: 100%;
-height: 100%;
-max-height: 85vh;
-overflow: hidden;
-position: absolute;
-top:0;
-left:0;
+    height: 100%;
+    max-height: 85vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-
-min-height: 85vh;
-    .header-title{
+    min-height: 85vh;
+    .header-title {
       position: absolute;
-      width:100%;
-top: 25%;
-left: 0;
-z-index: 2;
+      width: 100%;
+      top: 25%;
+      left: 0;
+      z-index: 2;
     }
-    .bg-image{
+    .bg-image {
       max-width: 100%;
       width: 100%;
-      height:0;
-      left:0;
-      top:0;
+      height: 0;
+      left: 0;
+      top: 0;
       overflow: hidden;
       position: relative;
       padding-bottom: 56.25%;
-   
-  
-   
-  
-      
-      
-      video{
-        position: absolute; 
-  top: 0; 
-  left: 0; 
-        width:100%;
-        height:100%;
+
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
-  }
-     
-      
-
-
-    
-    
+    }
   }
 }
 
@@ -245,4 +253,3 @@ ANIMATION
     opacity: 1;
   }
 }
-

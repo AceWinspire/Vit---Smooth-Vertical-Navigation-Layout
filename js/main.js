@@ -2,13 +2,12 @@
 $(function (side_Nav_Animation) {
 
     var navAnim = new TimelineMax({ paused: true })
-    navAnim.to("nav", 0.6, { x: 480, backgroundColor: "rgba(255, 255, 255, 1)", ease: SteppedEase.config(6) });
+    navAnim.to("nav", 0.6, { x: 460, backgroundColor: "rgba(255, 255, 255, 1)", ease: SteppedEase.config(6) });
     
    
     var topAnim =  TweenMax.to("#top", 1.2, {paused:true, rotation:45, ease: Elastic.easeInOut.config(1.2, 2)});
-    var bottomAnim =  TweenMax.to("#bottom", 1.2, {paused:true, y:-10, rotation:-45,  ease: Elastic.easeInOut.config(1.2, 2)});
-    //var bottomAnim = new TimelineMax({ paused: true })
-    //bottomAnim.to("#bottom", 0.55, {y:-10, rotation: -45, ease: SteppedEase.config(6) });
+    var bottomAnim =  TweenMax.to("#bottom", 1.2, {paused:true, y:-20, rotation:-45,  ease: Elastic.easeInOut.config(1.2, 2)});
+    
 
     
     

@@ -27,7 +27,7 @@ SIDEBAR
 ************************/
 .logo {
   top: 5px;
-  left: 10px;
+  left: 1rem;
   padding: 0px;
   margin: 0;
   z-index: 11;
@@ -46,7 +46,7 @@ nav {
   overflow: auto;
   top: 0px;
   bottom: 0;
-  left: -480px;
+  left: -460px;
   width: 520px;
   padding: 20px 0px;
   height: 100%;
@@ -64,15 +64,15 @@ nav .menuicon {
   position: relative;
   z-index: 5;
   top: 50%;
-  right: -20px;
+  right: 0.95rem;
   cursor: pointer;
   transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91), opacity 500ms, box-shadow 250ms, background-color 500ms;
   float: right;
 }
 nav .menuicon > div {
-  width: 35px;
-  height: 2px;
-  margin-bottom: 8px;
+  width: 2.25rem;
+  height: 4px;
+  margin-bottom: 16px;
   background-color: black;
 }
 nav .menuicon.active > div {
@@ -94,13 +94,21 @@ nav .menu-content {
   -webkit-align-items: stretch;
   align-items: stretch;
   display: flex;
+  margin-top: 2rem;
 }
 nav .menu-content .main {
   width: 50%;
-  min-height: 40vh;
+  min-height: 45vh;
 }
-nav .menu-content .main li a {
+nav .menu-content .main ul {
+  -webkit-align-self: stretch;
+  align-self: stretch;
+  vertical-align: top;
+}
+nav .menu-content .main ul li a {
   font-size: 2rem;
+  line-height: 2rem;
+  line-height: 4rem;
 }
 nav .menu-content .submenu {
   width: 50%;
@@ -123,9 +131,32 @@ nav .menu-content ul li a {
   text-decoration: none;
   color: black;
 }
+nav .menu-content ul.menu-title {
+  color: rgba(0, 0, 0, 0.25);
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+nav .menu-content ul.menu-title__dark {
+  color: black;
+}
+nav .menu-content ul.menu-title__dark h4 {
+  padding: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 1.25;
+}
+nav .menu-content ul.menu-title__dark li a {
+  color: rgba(0, 0, 0, 0.25);
+}
 nav .menu-content h4 {
   font-size: 0.75rem;
-  color: rgba(0, 0, 0, 0.25);
+  font-weight: 400;
+  margin: 0;
+}
+nav .menu-content h4.topmenu {
+  min-height: 4rem;
+  font-size: 0.75rem;
+  vertical-align: top;
 }
 nav .menu-content.active ul li {
   transition: all 250ms;
