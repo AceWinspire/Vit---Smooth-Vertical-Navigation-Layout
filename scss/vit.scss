@@ -25,7 +25,7 @@ body {
 }
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1140px;
   margin: 0 auto;
   position: relative;
 }
@@ -47,7 +47,7 @@ SIDEBAR
     text-decoration: none;
   }
 }
-nav {
+#navigation {
   position: fixed;
   z-index: 10;
   overflow: auto;
@@ -191,20 +191,91 @@ nav {
 /************************
 HEADER
 ************************/
+.nav-top {
+
+z-index: 2;
+position: fixed;
+top: 0;
+left: 0;
+width:100%;
+background: transparent;
+
+.wrap-top-nav{
+ 
+  width: 100%;
+  padding: 20px 0;
+  
+
+  a{
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 15px 30px; 
+    color: $black;
+    border-radius: 5px;
+    border:1px solid transparent;
+    @include transition();
+    &:hover,
+    &:focus,
+    &:active{
+      background: transparent;
+      border: 1px solid $black;
+
+    }
+  }
+  .download-app{
+    float:left;
+   
+
+  }
+  .wrap-top-right{
+    position: relative;
+    float:right;
+
+    
+    .currency{
+      float: left;
+
+    }
+    .sign-in{
+      float:left;
+      a{
+        padding: 15px 15px;
+        &.register{
+          border: 1px solid $black;
+          &:hover,
+          &:focus,
+          &:active{
+            background: $black;
+            border: 1px solid $white;
+            color:$white;
+  
+          }
+          
+        }
+
+      }
+
+    }
+    .search{
+      float: left;
+      padding: 0px 15px;
+      svg{
+        max-width: 20px;
+        
+      }
+
+    }
+
+}
+
+}
+}
 header {
   position: relative;
   width: 100%;
   height: 100%;
   min-height: 85vh;
-  .nav-top {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: grey;
-  }
-  .slide-main {
+    .slide-main {
     width: 100%;
     height: 100%;
     max-height: 85vh;
@@ -220,6 +291,15 @@ header {
       top: 25%;
       left: 0;
       z-index: 2;
+      h1{
+        font-size: 5rem;
+        color:$white;
+        font-weight: 900;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+      }
+      h2{
+        color:$white;
+      }
     }
     .bg-image {
       max-width: 100%;

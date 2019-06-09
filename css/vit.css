@@ -17,7 +17,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1140px;
   margin: 0 auto;
   position: relative;
 }
@@ -40,7 +40,7 @@ SIDEBAR
   text-decoration: none;
 }
 
-nav {
+#navigation {
   position: fixed;
   z-index: 10;
   overflow: auto;
@@ -60,7 +60,7 @@ nav {
 
   }*/
 }
-nav .menuicon {
+#navigation .menuicon {
   position: relative;
   z-index: 5;
   top: 50%;
@@ -69,22 +69,22 @@ nav .menuicon {
   transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91), opacity 500ms, box-shadow 250ms, background-color 500ms;
   float: right;
 }
-nav .menuicon > div {
+#navigation .menuicon > div {
   width: 2.25rem;
   height: 4px;
   margin-bottom: 16px;
   background-color: black;
 }
-nav .menuicon.active > div {
+#navigation .menuicon.active > div {
   background-color: black;
 }
-nav .menuicon.active #top {
+#navigation .menuicon.active #top {
   /*transform: translateY(0px) rotate(-135deg);*/
 }
-nav .menuicon.active #bottom {
+#navigation .menuicon.active #bottom {
   /*transform: translateY(-10px) rotate(-45deg);*/
 }
-nav .menu-content {
+#navigation .menu-content {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -96,25 +96,25 @@ nav .menu-content {
   display: flex;
   margin-top: 2rem;
 }
-nav .menu-content .main {
+#navigation .menu-content .main {
   width: 50%;
   min-height: 45vh;
 }
-nav .menu-content .main ul {
+#navigation .menu-content .main ul {
   -webkit-align-self: stretch;
   align-self: stretch;
   vertical-align: top;
 }
-nav .menu-content .main ul li a {
+#navigation .menu-content .main ul li a {
   font-size: 2rem;
   line-height: 2rem;
   line-height: 4rem;
 }
-nav .menu-content .submenu {
+#navigation .menu-content .submenu {
   width: 50%;
   font-size: 0.75rem;
 }
-nav .menu-content ul {
+#navigation .menu-content ul {
   list-style: none;
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -122,43 +122,43 @@ nav .menu-content ul {
   align-self: stretch;
   vertical-align: middle;
 }
-nav .menu-content ul li {
+#navigation .menu-content ul li {
   width: 100%;
   padding: 5px 0px;
 }
-nav .menu-content ul li a {
+#navigation .menu-content ul li a {
   font-size: 0.75rem;
   text-decoration: none;
   color: black;
 }
-nav .menu-content ul.menu-title {
+#navigation .menu-content ul.menu-title {
   color: rgba(0, 0, 0, 0.25);
   -webkit-align-items: flex-start;
   align-items: flex-start;
 }
-nav .menu-content ul.menu-title__dark {
+#navigation .menu-content ul.menu-title__dark {
   color: black;
 }
-nav .menu-content ul.menu-title__dark h4 {
+#navigation .menu-content ul.menu-title__dark h4 {
   padding: 0;
   padding: 0;
   margin: 0;
   line-height: 1.25;
 }
-nav .menu-content ul.menu-title__dark li a {
+#navigation .menu-content ul.menu-title__dark li a {
   color: rgba(0, 0, 0, 0.25);
 }
-nav .menu-content h4 {
+#navigation .menu-content h4 {
   font-size: 0.75rem;
   font-weight: 400;
   margin: 0;
 }
-nav .menu-content h4.topmenu {
+#navigation .menu-content h4.topmenu {
   min-height: 4rem;
   font-size: 0.75rem;
   vertical-align: top;
 }
-nav .menu-content.active ul li {
+#navigation .menu-content.active ul li {
   transition: all 250ms;
   -webkit-animation: exit normal forwards ease-out;
   /* Safari 4+ */
@@ -168,7 +168,7 @@ nav .menu-content.active ul li {
   /* Opera 12+ */
   animation: exit 0.35s normal forwards ease-out;
 }
-nav .menu-content .active ul li {
+#navigation .menu-content .active ul li {
   transition: all 250ms;
   -webkit-animation: entry normal forwards ease-in-out;
   /* Safari 4+ */
@@ -182,19 +182,71 @@ nav .menu-content .active ul li {
 /************************
 HEADER
 ************************/
+.nav-top {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+}
+.nav-top .wrap-top-nav {
+  width: 100%;
+  padding: 20px 0;
+}
+.nav-top .wrap-top-nav a {
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 15px 30px;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.nav-top .wrap-top-nav a:hover, .nav-top .wrap-top-nav a:focus, .nav-top .wrap-top-nav a:active {
+  background: transparent;
+  border: 1px solid black;
+}
+.nav-top .wrap-top-nav .download-app {
+  float: left;
+}
+.nav-top .wrap-top-nav .wrap-top-right {
+  position: relative;
+  float: right;
+}
+.nav-top .wrap-top-nav .wrap-top-right .currency {
+  float: left;
+}
+.nav-top .wrap-top-nav .wrap-top-right .sign-in {
+  float: left;
+}
+.nav-top .wrap-top-nav .wrap-top-right .sign-in a {
+  padding: 15px 15px;
+}
+.nav-top .wrap-top-nav .wrap-top-right .sign-in a.register {
+  border: 1px solid black;
+}
+.nav-top .wrap-top-nav .wrap-top-right .sign-in a.register:hover, .nav-top .wrap-top-nav .wrap-top-right .sign-in a.register:focus, .nav-top .wrap-top-nav .wrap-top-right .sign-in a.register:active {
+  background: black;
+  border: 1px solid white;
+  color: white;
+}
+.nav-top .wrap-top-nav .wrap-top-right .search {
+  float: left;
+  padding: 0px 15px;
+}
+.nav-top .wrap-top-nav .wrap-top-right .search svg {
+  max-width: 20px;
+}
+
 header {
   position: relative;
   width: 100%;
   height: 100%;
   min-height: 85vh;
-}
-header .nav-top {
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: grey;
 }
 header .slide-main {
   width: 100%;
@@ -212,6 +264,15 @@ header .slide-main .header-title {
   top: 25%;
   left: 0;
   z-index: 2;
+}
+header .slide-main .header-title h1 {
+  font-size: 5rem;
+  color: white;
+  font-weight: 900;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+header .slide-main .header-title h2 {
+  color: white;
 }
 header .slide-main .bg-image {
   max-width: 100%;
