@@ -11,10 +11,11 @@ $(function (side_Nav_Animation) {
 
     
     
-    
+    var logoBtn = document.querySelector('.logo');
     var sidebarBox = document.querySelector('.menuicon');
     var sidebarBtn = document.querySelector('#navigation');
     var pageWrapper = document.querySelector('#page-content');
+    sidebarBtn = logoBtn;
     
     sidebarBtn.addEventListener('mouseenter', function (event) {
     
