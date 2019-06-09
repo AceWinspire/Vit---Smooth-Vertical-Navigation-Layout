@@ -8,9 +8,14 @@ $white: rgb(255, 255, 255);
   transition: all 0.35s ease-in-out;
 }
 
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,700,900&display=swap');
 /************************
 BASE
 ************************/
+body{
+  font-family: 'Poppins', sans-serif;
+}
 #page-content {
   position: absolute;
   top: 0;
@@ -28,6 +33,23 @@ BASE
 /************************
 SIDEBAR
 ************************/
+.logo{
+  top: 5px;
+    left: 10px;
+    padding: 0px;
+    margin:0;
+    
+    
+    z-index: 11;
+    position: fixed;
+    a{
+      color:$black;
+      font-size:2em;
+      font-weight:600;
+      text-decoration: none;
+    }
+
+}
 nav {
   position: fixed;
   z-index: 10;
@@ -42,14 +64,9 @@ nav {
   color: $black;
   @include transition;
 
-  .logo {
-    top: 5px;
-    right: 10px;
-    padding: 5px;
-    float: right;
-    z-index: 2;
-    position: relative;
-  }
+  /*.logo {
+    
+  }*/
   .menuicon {
     position: relative;
     z-index: 5;
@@ -80,6 +97,59 @@ nav {
     }
   }
   .menu-content {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    display: flex;
+    .main{
+    
+     width:50%;
+  
+  min-height: 40vh;
+  li a{
+    font-size: 2rem;
+    
+  }
+    }
+    .submenu{
+      width:50%;
+      font-size: 0.75rem;
+
+     
+    }
+    ul{
+      list-style: none;
+      -webkit-flex: 1 1 auto;
+     
+      flex: 1 1 auto;
+      -webkit-align-self: stretch;
+      align-self: stretch;
+      vertical-align: middle;
+     
+      
+      li{
+        width:100%;
+        padding: 5px 0px;
+        a{
+          font-size: 0.75rem;
+          text-decoration: none;
+          color: $black;
+        }
+      }
+    }
+    h4{
+      font-size: 0.75rem;
+      color: rgba($black, 0.25);
+    }
+      
+
+    
+
     &.active ul li {
       transition: all 250ms;
       -webkit-animation: exit normal forwards ease-out; /* Safari 4+ */
