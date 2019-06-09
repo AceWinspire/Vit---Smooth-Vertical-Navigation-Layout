@@ -8,6 +8,10 @@ $white: rgb(255, 255, 255);
   transition: all 0.35s ease-in-out;
 }
 
+@mixin box_shadow {
+  box-shadow: 0 2px 2px rgba(10,16,20,.24), 0 0 2px rgba(10,16,20,.12);
+}
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,400,700,900&display=swap");
 /************************
 BASE
@@ -60,10 +64,9 @@ SIDEBAR
   background-color: $white;
   color: $black;
   @include transition;
+  @include box_shadow();
 
-  /*.logo {
-    
-  }*/
+  
   .menuicon {
     position: relative;
     z-index: 5;
@@ -246,7 +249,7 @@ background: transparent;
           &:focus,
           &:active{
             background: $black;
-            border: 1px solid $white;
+            border: 1px solid $black;
             color:$white;
   
           }
@@ -259,10 +262,41 @@ background: transparent;
     .search{
       float: left;
       padding: 0px 15px;
-      svg{
-        max-width: 20px;
-        
-      }
+     
+input[type=search] {
+  background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+  background-color:transparent;
+	border: 1px solid transparent;
+  padding: 0px 10px 0px 42px;
+	width: 55px;
+  -webkit-border-radius:1em;
+	-moz-border-radius: 1em;
+	border-radius: 1em;
+  @include transition();
+  height:25px;
+}
+
+input[type=search]:focus,
+input[type=search]:hover {
+  width: 300px;
+	background-color:$white;
+	border-color: $black;
+  -webkit-box-shadow: 0 0 5px #d1d1d1;
+	-moz-box-shadow: 0 0 5px #d1d1d1;
+  box-shadow: 0 0 5px #d1d1d1;
+  padding: 9px 10px 9px 42px;
+  min-height:25px;
+}
+
+input:-moz-placeholder{
+  color: #00241B;
+}
+
+ textarea::placeholder,
+ input::-webkit-input-placeholder {
+	color: #00241B;
+}
+
 
     }
 
@@ -333,3 +367,4 @@ ANIMATION
     opacity: 1;
   }
 }
+

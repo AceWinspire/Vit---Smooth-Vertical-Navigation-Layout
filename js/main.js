@@ -15,7 +15,7 @@ $(function (side_Nav_Animation) {
     var sidebarBox = document.querySelector('.menuicon');
     var sidebarBtn = document.querySelector('#navigation');
     var pageWrapper = document.querySelector('#page-content');
-    sidebarBtn = logoBtn;
+    logoBtn = sidebarBtn;
     
     sidebarBtn.addEventListener('mouseenter', function (event) {
     
