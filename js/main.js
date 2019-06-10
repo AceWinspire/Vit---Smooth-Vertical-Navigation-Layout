@@ -1,3 +1,6 @@
+$(function (contAnim) {
+});
+
 //hover tweenMax Sidebar
 $(function (side_Nav_Animation) {
 
@@ -7,8 +10,13 @@ $(function (side_Nav_Animation) {
    
     var topAnim =  TweenMax.to("#top", 1.2, {paused:true, rotation:45, ease: Elastic.easeInOut.config(1.2, 2)});
     var bottomAnim =  TweenMax.to("#bottom", 1.2, {paused:true, y:-20, rotation:-45,  ease: Elastic.easeInOut.config(1.2, 2)});
-    
-
+    var contOne =  TweenMax.to(".one", 1.1, {paused:true, opacity: 1, ease: Power1.easeIn});
+var contTwo =  TweenMax.to(".two", 1.2, {paused:true, opacity: 1, ease: Power1.easeIn});
+var contThree =  TweenMax.to(".three", 1.3, {paused:true, opacity: 1, ease: Power1.easeIn});
+var contFour =  TweenMax.to(".four", 1, {paused:true, opacity: 1, ease: Power1.easeIn});
+var contFive =  TweenMax.to(".five", 1.2, {paused:true, opacity: 1, ease: Power1.easeIn});
+var contSix =  TweenMax.to(".six", 1.3, {paused:true, opacity: 1, ease: Power1.easeIn});
+   
     
     
     var logoBtn = document.querySelector('.logo');
@@ -28,6 +36,14 @@ $(function (side_Nav_Animation) {
             navAnim.play();
             topAnim.play();
             bottomAnim.play();
+            
+            contOne.play();
+            contTwo.play();
+            contThree.play();
+            contFour.play();
+            contFive.play();
+            contSix.play();
+
             this.classList.add('active');
             sidebarBox.classList.add('active');
         }
@@ -39,7 +55,12 @@ $(function (side_Nav_Animation) {
             navAnim.reverse();
             topAnim.reverse();
             bottomAnim.reverse();
-            
+            contOne.reverse();
+            contTwo.reverse();
+            contThree.reverse();
+            contFour.reverse();
+            contFive.reverse();
+            contSix.reverse();
             sidebarBtn.classList.remove('active');
             sidebarBox.classList.remove('active');
         }
