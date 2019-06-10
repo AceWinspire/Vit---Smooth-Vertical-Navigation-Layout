@@ -43,7 +43,7 @@ $(function (side_Nav_Animation) {
         }
     });
 
-    sidebarBtn.addEventListener('mouseleave', function (event) {
+    sidebarBtn.addEventListener('mouseleave',  function (event) {
 
         if (sidebarBox.classList.contains('active')) {
             navAnim.reverse();
@@ -71,3 +71,8 @@ $(function (side_Nav_Animation) {
     });
 });
 
+$(function (MobileFixClick) {
+    $('.menuicon').on('click', function (event) {
+        $("nav").hide();
+    });
+});
