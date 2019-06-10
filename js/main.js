@@ -69,10 +69,21 @@ $(function (side_Nav_Animation) {
             sidebarBox.classList.remove('active');
         }
     });
-});
-
-$(function (MobileFixClick) {
     $('.menuicon').on('click', function (event) {
-        $("nav").hide();
+        navAnim.reverse();
+            topAnim.reverse();
+            bottomAnim.reverse();
+            contOne.reverse();
+            contTwo.reverse();
+            contThree.reverse();
+            contFour.reverse();
+            contFive.reverse();
+            contSix.reverse();
+            menuAnim.reverse();
+            sidebarBtn.classList.remove('active');
+            sidebarBox.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        
     });
 });
+
