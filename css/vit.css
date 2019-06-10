@@ -359,12 +359,13 @@ RESPONSIVE VIEW
     min-height: initial;
   }
 
-  .container {
+  header .slide-main .header-title {
+    top: initial;
     padding: 30px;
   }
 
-  header .slide-main .header-title {
-    top: initial;
+  section h1 {
+    padding: 30px;
   }
 }
 
