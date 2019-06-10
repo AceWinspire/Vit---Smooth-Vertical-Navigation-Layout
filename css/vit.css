@@ -4,6 +4,7 @@ BASE
 ************************/
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 #page-content {
@@ -46,8 +47,8 @@ SIDEBAR
   overflow: auto;
   top: 0px;
   bottom: 0;
-  left: -460px;
-  width: 520px;
+  left: -260px;
+  width: 320px;
   padding: 20px 0px;
   height: 100%;
   background-color: white;
@@ -57,6 +58,10 @@ SIDEBAR
   -o-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
   box-shadow: 0 2px 2px rgba(10, 16, 20, 0.24), 0 0 2px rgba(10, 16, 20, 0.12);
+  overflow-y: hidden;
+}
+#navigation.active {
+  overflow-y: auto;
 }
 #navigation .menuicon {
   position: relative;
@@ -243,11 +248,11 @@ HEADER
   min-height: 25px;
 }
 .nav-top .wrap-top-nav .wrap-top-right .search input:-moz-placeholder {
-  color: #00241B;
+  color: #00241b;
 }
 .nav-top .wrap-top-nav .wrap-top-right .search textarea::placeholder,
 .nav-top .wrap-top-nav .wrap-top-right .search input::-webkit-input-placeholder {
-  color: #00241B;
+  color: #00241b;
 }
 
 header {
@@ -309,6 +314,58 @@ ANIMATION
 .five,
 .six {
   opacity: 0;
+}
+
+/************************
+RESPONSIVE VIEW
+*************************/
+@media screen and (max-width: 999px) {
+  nav .nav-top {
+    opacity: 0;
+    display: none;
+  }
+
+  nav.active .nav-top {
+    z-index: 11;
+    top: 35px;
+    position: relative;
+    background: #fff;
+    height: 100%;
+    left: -320px;
+  }
+
+  #navigation .menu-content .submenu,
+#navigation .menu-content .main {
+    width: 100%;
+  }
+
+  #navigation {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  header .slide-main .header-title h1 {
+    font-size: 3rem;
+  }
+
+  header .slide-main {
+    height: 100%;
+    min-height: initial;
+    max-height: initial;
+    position: relative;
+  }
+
+  header {
+    min-height: initial;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  header .slide-main .header-title {
+    top: initial;
+  }
 }
 
 /*# sourceMappingURL=../css/vit.css.map */

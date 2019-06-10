@@ -9,7 +9,7 @@ $white: rgb(255, 255, 255);
 }
 
 @mixin box_shadow {
-  box-shadow: 0 2px 2px rgba(10,16,20,.24), 0 0 2px rgba(10,16,20,.12);
+  box-shadow: 0 2px 2px rgba(10, 16, 20, 0.24), 0 0 2px rgba(10, 16, 20, 0.12);
 }
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,400,700,900&display=swap");
@@ -18,6 +18,7 @@ BASE
 ************************/
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 #page-content {
   position: absolute;
@@ -57,16 +58,19 @@ SIDEBAR
   overflow: auto;
   top: 0px;
   bottom: 0;
-  left: -460px;
-  width: 520px;
+  left: -260px;
+  width: 320px;
   padding: 20px 0px;
   height: 100%;
   background-color: $white;
   color: $black;
   @include transition;
   @include box_shadow();
+  overflow-y: hidden;
 
-  
+  &.active {
+    overflow-y: auto;
+  }
   .menuicon {
     position: relative;
     z-index: 5;
@@ -107,19 +111,21 @@ SIDEBAR
     align-items: stretch;
     display: flex;
     margin-top: 2rem;
-    
+
     .main {
       width: 50%;
 
       min-height: 45vh;
-      ul{-webkit-align-self: stretch;
+      ul {
+        -webkit-align-self: stretch;
         align-self: stretch;
-        vertical-align:top ;
-      li a {
-        font-size: 2rem;
-        line-height: 2rem;
-        line-height: 4rem;
-      }}
+        vertical-align: top;
+        li a {
+          font-size: 2rem;
+          line-height: 2rem;
+          line-height: 4rem;
+        }
+      }
     }
     .submenu {
       width: 50%;
@@ -146,8 +152,7 @@ SIDEBAR
       &.menu-title {
         color: rgba($black, 0.25);
         -webkit-align-items: flex-start;
-  align-items: flex-start;
- 
+        align-items: flex-start;
 
         &__dark {
           color: $black;
@@ -167,16 +172,12 @@ SIDEBAR
       font-size: 0.75rem;
       font-weight: 400;
       margin: 0;
-      &.topmenu{
+      &.topmenu {
         min-height: 4rem;
         font-size: 0.75rem;
         vertical-align: top;
-        
       }
     }
-
-    
-    
   }
 }
 
@@ -184,121 +185,107 @@ SIDEBAR
 HEADER
 ************************/
 .nav-top {
-
-z-index: 2;
-position: fixed;
-top: 0;
-left: 0;
-width:100%;
-background: transparent;
-
-.wrap-top-nav{
- 
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 20px 0;
-  
+  background: transparent;
 
-  a{
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 15px 30px; 
-    color: $black;
-    border-radius: 5px;
-    border:1px solid transparent;
-    @include transition();
-    &:hover,
-    &:focus,
-    &:active{
-      background: transparent;
-      border: 1px solid $black;
+  .wrap-top-nav {
+    width: 100%;
+    padding: 20px 0;
 
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 15px 30px;
+      color: $black;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      @include transition();
+      &:hover,
+      &:focus,
+      &:active {
+        background: transparent;
+        border: 1px solid $black;
+      }
     }
-  }
-  .download-app{
-    float:left;
-   
-
-  }
-  .wrap-top-right{
-    position: relative;
-    float:right;
-
-    
-    .currency{
+    .download-app {
       float: left;
-
     }
-    .sign-in{
-      float:left;
-      a{
-        padding: 15px 15px;
-        &.register{
-          border: 1px solid $black;
-          &:hover,
-          &:focus,
-          &:active{
-            background: $black;
+    .wrap-top-right {
+      position: relative;
+      float: right;
+
+      .currency {
+        float: left;
+      }
+      .sign-in {
+        float: left;
+        a {
+          padding: 15px 15px;
+          &.register {
             border: 1px solid $black;
-            color:$white;
-  
+            &:hover,
+            &:focus,
+            &:active {
+              background: $black;
+              border: 1px solid $black;
+              color: $white;
+            }
           }
-          
+        }
+      }
+      .search {
+        float: left;
+        padding: 0px 15px;
+
+        input[type="search"] {
+          background: #ededed
+            url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png)
+            no-repeat 9px center;
+          background-color: transparent;
+          border: 1px solid transparent;
+          padding: 0px 10px 0px 42px;
+          width: 55px;
+          -webkit-border-radius: 1em;
+          -moz-border-radius: 1em;
+          border-radius: 1em;
+          @include transition();
+          height: 25px;
         }
 
+        input[type="search"]:focus,
+        input[type="search"]:hover {
+          width: 300px;
+          background-color: $white;
+          border-color: $black;
+          -webkit-box-shadow: 0 0 5px #d1d1d1;
+          -moz-box-shadow: 0 0 5px #d1d1d1;
+          box-shadow: 0 0 5px #d1d1d1;
+          padding: 9px 10px 9px 42px;
+          min-height: 25px;
+        }
+
+        input:-moz-placeholder {
+          color: #00241b;
+        }
+
+        textarea::placeholder,
+        input::-webkit-input-placeholder {
+          color: #00241b;
+        }
       }
-
     }
-    .search{
-      float: left;
-      padding: 0px 15px;
-     
-input[type=search] {
-  background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-  background-color:transparent;
-	border: 1px solid transparent;
-  padding: 0px 10px 0px 42px;
-	width: 55px;
-  -webkit-border-radius:1em;
-	-moz-border-radius: 1em;
-	border-radius: 1em;
-  @include transition();
-  height:25px;
-}
-
-input[type=search]:focus,
-input[type=search]:hover {
-  width: 300px;
-	background-color:$white;
-	border-color: $black;
-  -webkit-box-shadow: 0 0 5px #d1d1d1;
-	-moz-box-shadow: 0 0 5px #d1d1d1;
-  box-shadow: 0 0 5px #d1d1d1;
-  padding: 9px 10px 9px 42px;
-  min-height:25px;
-}
-
-input:-moz-placeholder{
-  color: #00241B;
-}
-
- textarea::placeholder,
- input::-webkit-input-placeholder {
-	color: #00241B;
-}
-
-
-    }
-
-}
-
-}
+  }
 }
 header {
   position: relative;
   width: 100%;
-  
+
   min-height: 85vh;
-    .slide-main {
+  .slide-main {
     width: 100%;
     height: 100%;
     max-height: 85vh;
@@ -314,14 +301,14 @@ header {
       top: 25%;
       left: 0;
       z-index: 2;
-      h1{
+      h1 {
         font-size: 5rem;
-        color:$white;
+        color: $white;
         font-weight: 900;
-        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
       }
-      h2{
-        color:$white;
+      h2 {
+        color: $white;
       }
     }
     .bg-image {
@@ -353,6 +340,50 @@ ANIMATION
 .thee,
 .four,
 .five,
-.six{
+.six {
   opacity: 0;
+}
+/************************
+RESPONSIVE VIEW
+*************************/
+@media screen and (max-width: 999px) {
+  nav .nav-top {
+    opacity: 0;
+    display: none;
+  }
+  nav.active .nav-top {
+    z-index: 11;
+    top: 35px;
+    position: relative;
+
+    background: #fff;
+    height: 100%;
+    left: -320px;
+  }
+  #navigation .menu-content .submenu,
+  #navigation .menu-content .main {
+    width: 100%;
+  }
+  #navigation {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  header .slide-main .header-title h1 {
+    font-size: 3rem;
+  }
+  header .slide-main {
+    height: 100%;
+    min-height: initial;
+    max-height: initial;
+    position: relative;
+  }
+  header {
+    min-height: initial;
+  }
+  .container {
+    padding: 30px;
+  }
+  header .slide-main .header-title {
+    top: initial;
+  }
 }
